@@ -66,7 +66,7 @@ namespace JobBoardApplication_WebAPI_EFCore.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!JobPositionExists(id))
+                if (!JobPositionExists(jobPosition.WorkPosition))
                 {
                     return NotFound();
                 }
