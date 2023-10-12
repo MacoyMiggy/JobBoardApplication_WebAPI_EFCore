@@ -1,3 +1,5 @@
+// Code for Program.CS
+
 using JobBoardApplication_WebAPI_EFCore.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -18,14 +20,6 @@ builder.Services.AddDbContext<JobBoardAppWebApiContext>(options
 
 
 var app = builder.Build();
-
-//using (var scope = app.Services.CreateScope())
-//{
-//    var service = scope.ServiceProvider;
-//    var context = service.GetService<JobBoardAppWebApiContext>();
-//}
-
-
 
 
 // Configure the HTTP request pipeline.

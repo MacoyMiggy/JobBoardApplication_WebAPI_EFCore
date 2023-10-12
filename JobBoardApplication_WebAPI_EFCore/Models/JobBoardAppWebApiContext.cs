@@ -1,4 +1,6 @@
-﻿using System;
+﻿// DBContext and DBSet for Applicant and Job Position
+
+using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 

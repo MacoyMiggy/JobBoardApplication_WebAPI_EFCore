@@ -1,4 +1,6 @@
-﻿using System;
+﻿// Model for Job Positions
+
+using System;
 using System.Collections.Generic;
 
 namespace JobBoardApplication_WebAPI_EFCore.Models;
