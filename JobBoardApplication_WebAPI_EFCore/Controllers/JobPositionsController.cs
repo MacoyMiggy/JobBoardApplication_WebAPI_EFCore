@@ -71,7 +71,7 @@ namespace JobBoardApplication_WebAPI_EFCore.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!JobPositionExists(jobPosition.WorkPosition))
+                if (!JobPositionIdExists(id))
                 {
                     return NotFound();
                 }
@@ -99,7 +99,7 @@ namespace JobBoardApplication_WebAPI_EFCore.Controllers
             }
             catch (DbUpdateException)
             {
-                if (JobPositionExists(jobPosition.WorkPosition))
+                if (JobPositionIdExists(jobPosition.Id) && JobPositionExists(jobPosition.WorkPosition))
                 {
                     return Conflict();
                 }
@@ -109,7 +109,7 @@ namespace JobBoardApplication_WebAPI_EFCore.Controllers
                 }
             }
 
-            return CreatedAtAction("GetJobPosition", new { id = jobPosition.Id }, jobPosition);
+            return CreatedAtAction("GetJobPosition", new { id = jobPosition.Id, jobPosition.WorkPosition}, jobPosition);
         }
 
         // DELETE: api/JobPositions/5
@@ -137,5 +137,9 @@ namespace JobBoardApplication_WebAPI_EFCore.Controllers
             return (_context.JobPositions?.Any(e => e.WorkPosition == workPosition)).GetValueOrDefault();
         }
 
+        private bool JobPositionIdExists(int id)
+        {
+            return (_context.JobPositions?.Any(e => e.Id == id)).GetValueOrDefault();
+        }
     }
 }
