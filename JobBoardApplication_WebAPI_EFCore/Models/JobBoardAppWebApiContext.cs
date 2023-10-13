@@ -15,7 +15,7 @@ public partial class JobBoardAppWebApiContext : DbContext
     public JobBoardAppWebApiContext(DbContextOptions<JobBoardAppWebApiContext> options)
         : base(options)
     {
-        Database.EnsureCreated();
+        //Database.EnsureCreated();
     }
 
     public virtual DbSet<Applicant> Applicants { get; set; }
@@ -23,7 +23,7 @@ public partial class JobBoardAppWebApiContext : DbContext
     public virtual DbSet<JobPosition> JobPositions { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseSqlServer("Data Source=(localdb)\\ProjectModels;Initial Catalog=JobBoardApp_WebAPI;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+        => optionsBuilder.UseSqlServer("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=JobBoardApp_WebAPI;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
