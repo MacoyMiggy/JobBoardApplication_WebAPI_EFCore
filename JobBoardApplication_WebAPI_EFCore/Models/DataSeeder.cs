@@ -11,6 +11,11 @@
 
         public void Seed()
         {
+            // Mark's procedure for seed data API
+            // 1. Open command prompt and change the directory path locates into "program.cs" use, --> cd local_directory_path (e.g. C:\Source\JobBoarApp_WebAPI_EFCore\JobBoardApplication_WebAPI_EFCore\JobBoardApplication_WebAPI_EFCore )
+            // 2. Then type, "dotnet run seeddata"
+
+            // Mock data
             // Seed data for Applicants
             if (!applicantDbContext.Applicants.Any())
             {
@@ -47,30 +52,33 @@
             }
 
             // Seed Data for Job Positions
-            //if (!applicantDbContext.JobPositions.Any())
-            //{
-            //    var positions = new List<JobPosition>()
-            //    {
-            //            new JobPosition()
-            //            {
-            //                ApplicantId = 1,
-            //                WorkPosition = "Engineer"
-            //            },
-            //            new JobPosition()
-            //            {
-            //                ApplicantId = 2,
-            //                WorkPosition = "Developer"
-            //            },
-            //            new JobPosition()
-            //            {
-            //                ApplicantId = 3,
-            //                WorkPosition = "Teacher"
-            //            }
-            //    };
+            if (!applicantDbContext.JobPositions.Any())
+            {
+                var positions = new List<JobPosition>()
+                {
+                        new JobPosition()
+                        {
+                            Id= 1,
+                            ApplicantId = 1,
+                            WorkPosition = "Engineer"
+                        },
+                        new JobPosition()
+                        {
+                            Id= 2,
+                            ApplicantId = 2,
+                            WorkPosition = "Developer"
+                        },
+                        new JobPosition()
+                        {
+                            Id = 3,
+                            ApplicantId = 3,
+                            WorkPosition = "Teacher"
+                        }
+                };
 
-            //    applicantDbContext.JobPositions.AddRange(positions);
-            //    applicantDbContext.SaveChanges();
-            //}
+                applicantDbContext.JobPositions.AddRange(positions);
+                applicantDbContext.SaveChanges();
+            }
         }
     }
 }

@@ -53,7 +53,8 @@ public partial class JobBoardAppWebApiContext : DbContext
         {
             entity.HasKey(e => e.Id).HasName("PK__JobPosit__3214EC0788B78676");
 
-            entity.Property(e => e.Id).ValueGeneratedNever();
+            entity.ToTable("JobPosition");
+            entity.Property(e => e.ApplicantId).ValueGeneratedNever();
             entity.Property(e => e.WorkPosition)
                 .HasMaxLength(20)
             .IsFixedLength();
