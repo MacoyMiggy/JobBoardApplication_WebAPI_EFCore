@@ -3,6 +3,7 @@
 using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Hosting;
 
 namespace JobBoardApplication_WebAPI_EFCore.Models;
 
@@ -55,8 +56,9 @@ public partial class JobBoardAppWebApiContext : DbContext
             entity.Property(e => e.Id).ValueGeneratedNever();
             entity.Property(e => e.WorkPosition)
                 .HasMaxLength(20)
-                .IsFixedLength();
+            .IsFixedLength();
         });
+
 
         OnModelCreatingPartial(modelBuilder);
     }
