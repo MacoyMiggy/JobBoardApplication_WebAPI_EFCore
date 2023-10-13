@@ -32,10 +32,10 @@
                         new Applicant()
                         {
                             ApplicantId = 2,
-                            FirstName = "Juan",
-                            LastName = "Cruz",
-                            EmailAddress = "juancruz@gmail.com",
-                            JobPosition = "Engineer"
+                            FirstName = "Ben",
+                            LastName = "Tong",
+                            EmailAddress = "bentong@gmail.com",
+                            JobPosition = "Developer"
                         },
                         new Applicant()
                         {
@@ -44,7 +44,24 @@
                             LastName = "Cosme",
                             EmailAddress = "kevincosme@gmail.com",
                             JobPosition = "Teacher"
-                        }
+                        },
+                        new Applicant()
+                        {
+                            ApplicantId = 4,
+                            FirstName = "Tom",
+                            LastName = "Guts",
+                            EmailAddress = "tomguts@gmail.com",
+                            JobPosition = "Accountant"
+                        },
+                        new Applicant()
+                        {
+                            ApplicantId = 5,
+                            FirstName = "King",
+                            LastName = "Kong",
+                            EmailAddress = "kingkong@gmail.com",
+                            JobPosition = "Analyst"
+                        },
+
                 };
 
                 applicantDbContext.Applicants.AddRange(applicants);
@@ -73,6 +90,18 @@
                             Id = 3,
                             ApplicantId = 3,
                             WorkPosition = "Teacher"
+                        },
+                        new JobPosition()
+                        {
+                            Id= 4,
+                            ApplicantId = 4,
+                            WorkPosition = "Accountant"
+                        }, 
+                        new JobPosition()
+                        {
+                            Id= 5,
+                            ApplicantId = 5,
+                            WorkPosition = "Analyst"
                         }
                 };
 
